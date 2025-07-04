@@ -121,7 +121,7 @@ export default function Home() {
         "
       >
         {/* Add Transaction */}
-        <div className="bg-white dark:bg-black border rounded-2xl shadow-md p-6 flex flex-col">
+        <div className="bg-white overflow-y-auto dark:bg-black border rounded-2xl shadow-md p-6 flex flex-col">
           <h2 className="text-2xl font-semibold text-primary mb-4">
             Add Transaction
           </h2>
@@ -133,7 +133,7 @@ export default function Home() {
         </div>
 
         {/* Transaction List */}
-        <div className="bg-white dark:bg-black border rounded-2xl shadow-md p-6 flex flex-col">
+        <div className="bg-white overflow-y-auto dark:bg-black border rounded-2xl shadow-md p-6 flex flex-col">
           <h2 className="text-2xl font-semibold text-primary mb-4">
             Transactions
           </h2>
@@ -150,7 +150,8 @@ export default function Home() {
           className="
           dark:bg-black 
           border 
-          rounded-2xl 
+          rounded-2xl
+          overflow-y-auto 
           shadow-md 
           p-6 
           md:col-span-2 
@@ -162,6 +163,7 @@ export default function Home() {
         <div
           className="
           border 
+          overflow-y-auto
           rounded-2xl 
           shadow-md 
           p-6 
