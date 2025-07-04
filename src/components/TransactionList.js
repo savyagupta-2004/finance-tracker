@@ -40,7 +40,7 @@ export default function TransactionList({
           </p>
         </div>
       ) : (
-        <ul className="space-y-2">
+        <ul className="space-y-2 max-h-[300px] overflow-y-auto">
           {transactions.map((tx) => (
             <li
               key={tx._id}
@@ -86,6 +86,7 @@ export default function TransactionList({
                   <div>
                     <p>Amount: {tx.amount}</p>
                     <p>Date: {tx.date}</p>
+                    <p>Category: {tx.category}</p>
                     <p>Description: {tx.description}</p>
                   </div>
                   <div className="flex gap-2">

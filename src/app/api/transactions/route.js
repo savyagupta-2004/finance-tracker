@@ -18,13 +18,22 @@ export async function POST(req) {
   try {
     const body = await req.json();
 
-    if (!body.amount || !body.date || !body.description) {
+    const { amount, date, description, category } = body;
+
+    if (!amount || !date || !description || !category) {
       return Response.json({ error: "Missing fields" }, { status: 400 });
     }
 
     const client = await clientPromise;
     const db = client.db("personal-finance");
-    await db.collection("transactions").insertOne(body);
+
+    await db.collection("transactions").insertOne({
+      amount,
+      date,
+      description,
+      category,
+      createdAt: new Date(),
+    });
 
     return Response.json({ message: "Added" });
   } catch (error) {
